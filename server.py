@@ -192,11 +192,14 @@ def background_refresh():
         time.sleep(60)
 
 
+# Start background refresh (works both with gunicorn and direct python)
+threading.Thread(target=background_refresh, daemon=True).start()
+
 # ── Routes ──────────────────────────────────────────────────────────────────
 
 @app.route('/')
 def index():
-    return send_file('index.html')
+    return send_file(Path(__file__).parent / 'index.html')
 
 @app.route('/api/results')
 def api_results():
@@ -216,11 +219,6 @@ def api_refresh():
 
 
 if __name__ == '__main__':
-    # Initial fetch synchronously so first request has data
-    print('Fetching initial results from ESPN...')
-    refresh_cache()
-    # Start background refresh loop
-    threading.Thread(target=background_refresh, daemon=True).start()
     import os
     port = int(os.environ.get('PORT', 3456))
     print(f'Starting Lotteria VM 2026 server on http://localhost:{port}')
