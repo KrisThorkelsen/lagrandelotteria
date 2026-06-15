@@ -8,17 +8,74 @@
 <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 <style>
+  :root {
+    --bg: #0a0f1e;
+    --text: #e2e8f0;
+    --text-muted: #64748b;
+    --border: rgba(255,255,255,0.08);
+    --border-thin: rgba(255,255,255,0.05);
+    --border-med: rgba(255,255,255,0.1);
+    --border-strong: rgba(255,255,255,0.2);
+    --card-bg: rgba(255,255,255,0.04);
+    --card-border: rgba(255,255,255,0.07);
+    --glass-bg: rgba(255,255,255,0.05);
+    --glass-border: rgba(255,255,255,0.1);
+    --input-bg: rgba(255,255,255,0.08);
+    --input-text: #ffffff;
+    --score-box-bg: rgba(255,255,255,0.07);
+    --hover-bg: rgba(255,255,255,0.03);
+    --btn-ghost-border: rgba(255,255,255,0.15);
+    --btn-ghost-hover: rgba(255,255,255,0.08);
+    --btn-ghost-color: #94a3b8;
+    --btn-ghost-hover-color: white;
+    --progress-bg: rgba(255,255,255,0.1);
+    --scrollbar-track: #1a2040;
+    --overlay-low: rgba(255,255,255,0.06);
+    --overlay-med: rgba(255,255,255,0.1);
+    --nav-tab-color: #64748b;
+    --nav-tab-hover: #94a3b8;
+    --option-bg: #1e293b;
+  }
+  [data-theme="light"] {
+    --bg: #f1f5f9;
+    --text: #1e293b;
+    --text-muted: #64748b;
+    --border: rgba(0,0,0,0.1);
+    --border-thin: rgba(0,0,0,0.06);
+    --border-med: rgba(0,0,0,0.12);
+    --border-strong: rgba(0,0,0,0.18);
+    --card-bg: rgba(0,0,0,0.03);
+    --card-border: rgba(0,0,0,0.08);
+    --glass-bg: rgba(0,0,0,0.04);
+    --glass-border: rgba(0,0,0,0.1);
+    --input-bg: rgba(0,0,0,0.06);
+    --input-text: #1e293b;
+    --score-box-bg: rgba(0,0,0,0.06);
+    --hover-bg: rgba(0,0,0,0.02);
+    --btn-ghost-border: rgba(0,0,0,0.15);
+    --btn-ghost-hover: rgba(0,0,0,0.06);
+    --btn-ghost-color: #64748b;
+    --btn-ghost-hover-color: #1e293b;
+    --progress-bg: rgba(0,0,0,0.1);
+    --scrollbar-track: #e2e8f0;
+    --overlay-low: rgba(0,0,0,0.05);
+    --overlay-med: rgba(0,0,0,0.1);
+    --nav-tab-color: #64748b;
+    --nav-tab-hover: #475569;
+    --option-bg: #f8fafc;
+  }
+
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Segoe UI', system-ui, sans-serif; background: #0a0f1e; color: #e2e8f0; min-height: 100vh; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; transition: background 0.2s, color 0.2s; }
 
   ::-webkit-scrollbar { width: 6px; }
-  ::-webkit-scrollbar-track { background: #1a2040; }
+  ::-webkit-scrollbar-track { background: var(--scrollbar-track); }
   ::-webkit-scrollbar-thumb { background: #3b82f6; border-radius: 3px; }
 
   .glass {
-    background: rgba(255,255,255,0.05);
+    background: var(--glass-bg);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.1);
+    border: 1px solid var(--glass-border);
     border-radius: 12px;
   }
 
@@ -40,18 +97,18 @@
   }
   .btn-primary { background: #3b82f6; color: white; }
   .btn-primary:hover { background: #2563eb; transform: translateY(-1px); }
-  .btn-ghost { background: transparent; color: #94a3b8; border: 1px solid rgba(255,255,255,0.15); }
-  .btn-ghost:hover { background: rgba(255,255,255,0.08); color: white; }
+  .btn-ghost { background: transparent; color: var(--btn-ghost-color); border: 1px solid var(--btn-ghost-border); }
+  .btn-ghost:hover { background: var(--btn-ghost-hover); color: var(--btn-ghost-hover-color); }
   .btn-danger { background: #ef4444; color: white; }
   .btn-danger:hover { background: #dc2626; }
 
   input[type=number] {
     width: 56px;
     padding: 6px 8px;
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.2);
+    background: var(--input-bg);
+    border: 1px solid var(--border-strong);
     border-radius: 6px;
-    color: white;
+    color: var(--input-text);
     font-size: 16px;
     font-weight: 700;
     text-align: center;
@@ -62,7 +119,7 @@
     padding: 10px 20px;
     border: none;
     background: transparent;
-    color: #64748b;
+    color: var(--nav-tab-color);
     cursor: pointer;
     font-size: 15px;
     font-weight: 600;
@@ -71,7 +128,7 @@
     white-space: nowrap;
   }
   .nav-tab.active { color: #60a5fa; border-bottom-color: #60a5fa; }
-  .nav-tab:hover:not(.active) { color: #94a3b8; }
+  .nav-tab:hover:not(.active) { color: var(--nav-tab-hover); }
 
   .medal-1 { color: #fbbf24; }
   .medal-2 { color: #94a3b8; }
@@ -95,15 +152,15 @@
   .points-0 { color: #475569; }
 
   table { width: 100%; border-collapse: collapse; }
-  th { text-align: left; padding: 10px 12px; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #64748b; border-bottom: 1px solid rgba(255,255,255,0.08); }
-  td { padding: 12px 12px; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 14px; }
-  tr:hover td { background: rgba(255,255,255,0.03); }
+  th { text-align: left; padding: 10px 12px; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); border-bottom: 1px solid var(--border); }
+  td { padding: 12px 12px; border-bottom: 1px solid var(--border-thin); font-size: 14px; }
+  tr:hover td { background: var(--hover-bg); }
 
   .score-box {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: rgba(255,255,255,0.07);
+    background: var(--score-box-bg);
     border-radius: 8px;
     padding: 4px 10px;
     font-size: 18px;
@@ -114,8 +171,8 @@
   .match-card {
     padding: 16px;
     border-radius: 10px;
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.07);
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
     transition: all 0.2s;
     margin-bottom: 8px;
   }
@@ -124,13 +181,13 @@
   .stat-card {
     padding: 20px;
     border-radius: 12px;
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.08);
+    background: var(--card-bg);
+    border: 1px solid var(--border);
   }
 
   .progress-bar {
     height: 6px;
-    background: rgba(255,255,255,0.1);
+    background: var(--progress-bg);
     border-radius: 3px;
     overflow: hidden;
   }
@@ -147,6 +204,27 @@
     font-size: 12px;
     font-weight: 700;
   }
+
+  .theme-toggle {
+    display: flex;
+    gap: 2px;
+    background: var(--overlay-low);
+    border: 1px solid var(--border-med);
+    border-radius: 8px;
+    padding: 3px;
+  }
+  .theme-btn {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: background 0.15s;
+    line-height: 1;
+  }
+  .theme-btn.active { background: #3b82f6; }
+  .theme-btn:not(.active):hover { background: var(--overlay-med); }
 
   @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
   .fade-in { animation: fadeIn 0.3s ease; }
@@ -188,6 +266,36 @@ function useIsMobile() {
     return () => window.removeEventListener('resize', fn);
   }, []);
   return mobile;
+}
+
+const ThemeCtx = React.createContext({ isDark: true });
+
+function useTheme() {
+  const [mode, setMode] = useState(() => localStorage.getItem('themeMode') || 'system');
+  const [sysDark, setSysDark] = useState(() => window.matchMedia('(prefers-color-scheme: dark)').matches);
+  useEffect(() => {
+    const mq = window.matchMedia('(prefers-color-scheme: dark)');
+    const fn = e => setSysDark(e.matches);
+    mq.addEventListener('change', fn);
+    return () => mq.removeEventListener('change', fn);
+  }, []);
+  const isDark = mode === 'dark' || (mode === 'system' && sysDark);
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+    localStorage.setItem('themeMode', mode);
+  }, [isDark, mode]);
+  return { mode, setMode, isDark };
+}
+
+function useC() {
+  const { isDark } = React.useContext(ThemeCtx);
+  const w = a => isDark ? `rgba(255,255,255,${a})` : `rgba(0,0,0,${a})`;
+  return {
+    w,
+    text: isDark ? '#e2e8f0' : '#1e293b',
+    inputText: isDark ? 'white' : '#1e293b',
+    optionBg: isDark ? '#1e293b' : '#f8fafc',
+  };
 }
 
 // ===== DATA =====
@@ -269,6 +377,7 @@ function ScoreBadge({ home, away, pts }) {
 // ===== TABELL VIEW =====
 function TabelView({ results, meta }) {
   const isMobile = useIsMobile();
+  const C = useC();
   const standings = useMemo(() => getStandings(results, meta), [results, meta]);
   const playedCount = Object.values(results).filter(r => r.home_score !== null && r.home_score !== undefined).length;
 
@@ -332,7 +441,7 @@ function TabelView({ results, meta }) {
                       </div>
                     )}
                   </td>
-                  <td style={{textAlign:'right',fontWeight:800,fontSize:17,color:rank===1?'#fbbf24':'#e2e8f0'}}>
+                  <td style={{textAlign:'right',fontWeight:800,fontSize:17,color:rank===1?'#fbbf24':C.text}}>
                     {s.total}
                   </td>
                   <td style={{textAlign:'right'}}>
@@ -377,6 +486,7 @@ function TabelView({ results, meta }) {
 
 // ===== KAMPER VIEW =====
 function KamperView({ results }) {
+  const C = useC();
   const [filter, setFilter] = useState('all');
 
   const matches = MATCHES_RAW.filter(m => {
@@ -447,9 +557,9 @@ function KamperView({ results }) {
               }}>
                 {played ? (
                   <>
-                    <span style={{color:isLive?'#fca5a5':'#e2e8f0'}}>{res.home_score}</span>
+                    <span style={{color:isLive?'#fca5a5':C.text}}>{res.home_score}</span>
                     <span style={{color:'#475569'}}>–</span>
-                    <span style={{color:isLive?'#fca5a5':'#e2e8f0'}}>{res.away_score}</span>
+                    <span style={{color:isLive?'#fca5a5':C.text}}>{res.away_score}</span>
                   </>
                 ) : <span style={{color:'#475569',fontSize:13,fontWeight:600}}>vs</span>}
               </div>
@@ -467,6 +577,7 @@ function KamperView({ results }) {
 // ===== DELTAKER VIEW =====
 function DeltakerView({ results, meta }) {
   const isMobile = useIsMobile();
+  const C = useC();
   const [selected, setSelected] = useState(PARTICIPANTS[0]);
   const standings = useMemo(() => getStandings(results, meta), [results, meta]);
   const rank = standings.findIndex(s => s.name === selected) + 1;
@@ -497,7 +608,7 @@ function DeltakerView({ results, meta }) {
             <button key={p} onClick={()=>setSelected(p)}
               style={{
                 padding:'8px 14px',borderRadius:8,border:'none',cursor:'pointer',fontWeight:700,fontSize:13,
-                background: selected===p ? '#3b82f6' : 'rgba(255,255,255,0.06)',
+                background: selected===p ? '#3b82f6' : C.w(0.06),
                 color: selected===p ? 'white' : r<=3 ? rankColors[r-1] : '#94a3b8',
                 transition:'all 0.2s'
               }}>
@@ -512,15 +623,15 @@ function DeltakerView({ results, meta }) {
           value={selected}
           onChange={e=>setSelected(e.target.value)}
           style={{
-            width:'100%',padding:'12px 14px',background:'rgba(255,255,255,0.07)',
-            border:'1px solid rgba(255,255,255,0.15)',borderRadius:10,color:'white',
+            width:'100%',padding:'12px 14px',background:C.w(0.07),
+            border:`1px solid ${C.w(0.15)}`,borderRadius:10,color:C.inputText,
             fontSize:16,fontWeight:700,cursor:'pointer',appearance:'none',
             backgroundImage:"url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%2394a3b8' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E\")",
             backgroundRepeat:'no-repeat',backgroundPosition:'right 14px center'
           }}>
           {standings.map((st,i) => {
             const medal = i<3?['🥇','🥈','🥉'][i]+' ':'';
-            return <option key={st.name} value={st.name} style={{background:'#1e293b'}}>{medal}#{i+1} {st.name} – {st.total} poeng</option>;
+            return <option key={st.name} value={st.name} style={{background:C.optionBg,color:C.text}}>{medal}#{i+1} {st.name} – {st.total} poeng</option>;
           })}
         </select>
       </div>
@@ -528,7 +639,7 @@ function DeltakerView({ results, meta }) {
       <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(140px,1fr))',gap:12,marginBottom:20}}>
         <div className="stat-card" style={{textAlign:'center'}}>
           <div style={{fontSize:11,color:'#64748b',marginBottom:6,textTransform:'uppercase',letterSpacing:1}}>Plass</div>
-          <div style={{fontSize:40,fontWeight:900,color:rank<=3?['#fbbf24','#94a3b8','#cd7c2f'][rank-1]:'#e2e8f0'}}>
+          <div style={{fontSize:40,fontWeight:900,color:rank<=3?['#fbbf24','#94a3b8','#cd7c2f'][rank-1]:C.text}}>
             {rank <= 3 ? ['🥇','🥈','🥉'][rank-1] : `#${rank}`}
           </div>
         </div>
@@ -546,14 +657,14 @@ function DeltakerView({ results, meta }) {
         </div>
         <div className="stat-card" style={{textAlign:'center'}}>
           <div style={{fontSize:11,color:'#64748b',marginBottom:6,textTransform:'uppercase',letterSpacing:1}}>VM-vinner</div>
-          <div style={{fontSize:14,fontWeight:700,marginTop:4,color:vmCorrect?'#4ade80':'#e2e8f0'}}>{m.vinner_vm||'–'}</div>
+          <div style={{fontSize:14,fontWeight:700,marginTop:4,color:vmCorrect?'#4ade80':C.text}}>{m.vinner_vm||'–'}</div>
           <div style={{fontSize:11,color:vmCorrect?'#4ade80':'#64748b',marginTop:2}}>
             {vmCorrect?`✓ +5 poeng`:`(5 poeng)`}
           </div>
         </div>
         <div className="stat-card" style={{textAlign:'center'}}>
           <div style={{fontSize:11,color:'#64748b',marginBottom:6,textTransform:'uppercase',letterSpacing:1}}>Toppscorer</div>
-          <div style={{fontSize:14,fontWeight:700,marginTop:4,color:tsCorrect?'#4ade80':'#e2e8f0'}}>{m.toppscorer||'–'}</div>
+          <div style={{fontSize:14,fontWeight:700,marginTop:4,color:tsCorrect?'#4ade80':C.text}}>{m.toppscorer||'–'}</div>
           <div style={{fontSize:11,color:tsCorrect?'#4ade80':'#64748b',marginTop:2}}>
             {tsCorrect?`✓ +6 poeng`:`(6 poeng)`}
           </div>
@@ -587,7 +698,7 @@ function DeltakerView({ results, meta }) {
                 <td style={{textAlign:'center'}}>
                   {m.played ? (
                     <span style={{fontWeight:800,fontSize:15}}>{m.res.home_score}–{m.res.away_score}</span>
-                  ) : <span style={{color:'#2d3748'}}>–</span>}
+                  ) : <span style={{color:'#475569'}}>–</span>}
                 </td>
                 <td style={{textAlign:'center'}}>
                   {m.tip ? (
@@ -601,7 +712,7 @@ function DeltakerView({ results, meta }) {
                       color:m.pts===3?'#4ade80':m.pts===1?'#facc15':'#475569'}}>
                       {m.pts===3?'3✓':m.pts===1?'1✓':'0'}
                     </span>
-                  ) : <span style={{color:'#2d3748'}}>–</span>}
+                  ) : <span style={{color:'#475569'}}>–</span>}
                 </td>
               </tr>
             ))}
@@ -745,6 +856,7 @@ function StatistikkView({ results, meta }) {
 
 // ===== ADMIN / BONUS VIEW =====
 function AdminView({ meta, setMeta }) {
+  const C = useC();
   const [vm, setVm] = useState(meta.vm_winner || '');
   const [ts, setTs] = useState(meta.toppscorer || '');
   const [saved, setSaved] = useState(false);
@@ -772,8 +884,8 @@ function AdminView({ meta, setMeta }) {
             {vmTipps.map(t => (
               <button key={t} onClick={()=>setVm(t)} className="btn" style={{
                 fontSize:12, padding:'4px 12px',
-                background: vm===t?'rgba(74,222,128,0.2)':'rgba(255,255,255,0.06)',
-                border: vm===t?'1px solid #4ade80':'1px solid rgba(255,255,255,0.1)',
+                background: vm===t?'rgba(74,222,128,0.2)':C.w(0.06),
+                border: vm===t?'1px solid #4ade80':`1px solid ${C.w(0.1)}`,
                 color: vm===t?'#4ade80':'#94a3b8'
               }}>
                 <Flag country={t}/> {t}
@@ -785,8 +897,8 @@ function AdminView({ meta, setMeta }) {
             onChange={e=>setVm(e.target.value)}
             placeholder="Eller skriv inn nasjon..."
             style={{
-              width:'100%',padding:'8px 12px',background:'rgba(255,255,255,0.06)',
-              border:'1px solid rgba(255,255,255,0.15)',borderRadius:8,color:'white',fontSize:14
+              width:'100%',padding:'8px 12px',background:C.w(0.06),
+              border:`1px solid ${C.w(0.15)}`,borderRadius:8,color:C.inputText,fontSize:14
             }}
           />
         </div>
@@ -797,8 +909,8 @@ function AdminView({ meta, setMeta }) {
             {tsTipps.map(t => (
               <button key={t} onClick={()=>setTs(t)} className="btn" style={{
                 fontSize:12, padding:'4px 12px',
-                background: ts===t?'rgba(74,222,128,0.2)':'rgba(255,255,255,0.06)',
-                border: ts===t?'1px solid #4ade80':'1px solid rgba(255,255,255,0.1)',
+                background: ts===t?'rgba(74,222,128,0.2)':C.w(0.06),
+                border: ts===t?'1px solid #4ade80':`1px solid ${C.w(0.1)}`,
                 color: ts===t?'#4ade80':'#94a3b8'
               }}>
                 {t}
@@ -810,8 +922,8 @@ function AdminView({ meta, setMeta }) {
             onChange={e=>setTs(e.target.value)}
             placeholder="Eller skriv inn spiller..."
             style={{
-              width:'100%',padding:'8px 12px',background:'rgba(255,255,255,0.06)',
-              border:'1px solid rgba(255,255,255,0.15)',borderRadius:8,color:'white',fontSize:14
+              width:'100%',padding:'8px 12px',background:C.w(0.06),
+              border:`1px solid ${C.w(0.15)}`,borderRadius:8,color:C.inputText,fontSize:14
             }}
           />
         </div>
@@ -840,13 +952,13 @@ function AdminView({ meta, setMeta }) {
                 <tr key={p}>
                   <td style={{fontWeight:600}}>{p}</td>
                   <td>
-                    <span style={{color:vmOk?'#4ade80':'#e2e8f0'}}>
+                    <span style={{color:vmOk?'#4ade80':C.text}}>
                       <Flag country={m.vinner_vm}/> {m.vinner_vm||'–'}
                       {vmOk?<span style={{marginLeft:6,fontSize:11,color:'#4ade80'}}>+5 ✓</span>:''}
                     </span>
                   </td>
                   <td>
-                    <span style={{color:tsOk?'#4ade80':'#e2e8f0'}}>
+                    <span style={{color:tsOk?'#4ade80':C.text}}>
                       {m.toppscorer||'–'}
                       {tsOk?<span style={{marginLeft:6,fontSize:11,color:'#4ade80'}}>+6 ✓</span>:''}
                     </span>
@@ -863,6 +975,7 @@ function AdminView({ meta, setMeta }) {
 
 // ===== MAIN APP =====
 function App() {
+  const { mode: themeMode, setMode: setThemeMode, isDark } = useTheme();
   const [tab, setTab] = useState('tabell');
   const [results, setResults] = useState({});
   const [liveMatches, setLiveMatches] = useState([]);
@@ -907,11 +1020,14 @@ function App() {
   ];
 
   return (
+    <ThemeCtx.Provider value={{isDark}}>
     <div style={{minHeight:'100vh'}}>
       {/* Header */}
       <div style={{
-        background:'linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%)',
-        borderBottom:'1px solid rgba(255,255,255,0.08)',
+        background: isDark
+          ? 'linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%)'
+          : 'linear-gradient(135deg, #1e3a5f 0%, #312e81 50%, #1e3a5f 100%)',
+        borderBottom:'1px solid var(--border)',
         padding:'0 16px'
       }}>
         <div style={{maxWidth:1100,margin:'0 auto'}}>
@@ -945,6 +1061,11 @@ function App() {
                 background:'rgba(255,255,255,0.06)',border:'1px solid rgba(255,255,255,0.1)',
                 borderRadius:6,color:'#94a3b8',padding:'4px 10px',cursor:'pointer',fontSize:12
               }}>↻ Oppdater</button>
+              <div className="theme-toggle">
+                <button className={`theme-btn${themeMode==='light'?' active':''}`} onClick={()=>setThemeMode('light')} title="Lys modus">☀️</button>
+                <button className={`theme-btn${themeMode==='dark'?' active':''}`} onClick={()=>setThemeMode('dark')} title="Mørk modus">🌙</button>
+                <button className={`theme-btn${themeMode==='system'?' active':''}`} onClick={()=>setThemeMode('system')} title="Systeminnstilling">💻</button>
+              </div>
             </div>
           </div>
 
@@ -961,7 +1082,7 @@ function App() {
                 }}>
                   <span style={{color:'#f87171',fontWeight:700,marginRight:6}}>{m.clock}</span>
                   <span>{FLAGS[m.home]||''} {m.home}</span>
-                  <span style={{fontWeight:800,margin:'0 8px',color:'#e2e8f0'}}>{m.home_score}–{m.away_score}</span>
+                  <span style={{fontWeight:800,margin:'0 8px',color:'white'}}>{m.home_score}–{m.away_score}</span>
                   <span>{m.away} {FLAGS[m.away]||''}</span>
                 </div>
               ))}
@@ -987,6 +1108,7 @@ function App() {
         {tab==='admin' && <AdminView meta={meta} setMeta={setMeta}/>}
       </div>
     </div>
+    </ThemeCtx.Provider>
   );
 }
 
