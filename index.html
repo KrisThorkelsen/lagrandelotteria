@@ -276,8 +276,14 @@ function useTheme() {
   useEffect(() => {
     const mq = window.matchMedia('(prefers-color-scheme: dark)');
     const fn = e => setSysDark(e.matches);
-    mq.addEventListener('change', fn);
-    return () => mq.removeEventListener('change', fn);
+    // Safari <14 only supports the legacy addListener/removeListener API
+    if (mq.addEventListener) {
+      mq.addEventListener('change', fn);
+      return () => mq.removeEventListener('change', fn);
+    } else if (mq.addListener) {
+      mq.addListener(fn);
+      return () => mq.removeListener(fn);
+    }
   }, []);
   const isDark = mode === 'dark' || (mode === 'system' && sysDark);
   useEffect(() => {
