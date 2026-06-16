@@ -11,7 +11,7 @@ from datetime import date, timedelta
 from pathlib import Path
 
 import requests
-from flask import Flask, jsonify, send_file
+from flask import Flask, jsonify, send_file, send_from_directory
 from flask_cors import CORS
 
 app = Flask(__name__)
@@ -200,6 +200,10 @@ threading.Thread(target=background_refresh, daemon=True).start()
 @app.route('/')
 def index():
     return send_file(Path(__file__).parent / 'index.html')
+
+@app.route('/vendor/<path:filename>')
+def vendor(filename):
+    return send_from_directory(Path(__file__).parent / 'vendor', filename)
 
 @app.route('/api/results')
 def api_results():

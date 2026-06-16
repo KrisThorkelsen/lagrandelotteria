@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Lotteria VM 2026 🏆</title>
-<script src="https://unpkg.com/react@18/umd/react.development.js"></script>
-<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script src="/vendor/react.production.min.js"></script>
+<script src="/vendor/react-dom.production.min.js"></script>
+<script src="/vendor/babel.min.js"></script>
 <style>
   :root {
     --bg: #0a0f1e;
@@ -255,7 +255,7 @@
 
 <div id="root"></div>
 
-<script type="text/babel">
+<script type="text/plain" id="app-source">
 const { useState, useEffect, useMemo, useCallback } = React;
 
 function useIsMobile() {
@@ -1121,6 +1121,16 @@ function App() {
 }
 
 ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>
+<script>
+  // Manually transform the app source with the classic JSX runtime so it doesn't
+  // depend on Babel's "automatic" runtime (which emits ES module imports that
+  // can't run in a plain <script> tag).
+  (function() {
+    var src = document.getElementById('app-source').textContent;
+    var out = Babel.transform(src, { presets: [['react', { runtime: 'classic' }]] }).code;
+    (0, eval)(out);
+  })();
 </script>
 </body>
 </html>
