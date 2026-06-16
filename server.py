@@ -144,6 +144,7 @@ def parse_events(events):
             'completed': completed,
             'clock': comp['status'].get('displayClock', ''),
             'status_name': status.get('shortDetail', status.get('name', '')),
+            'kickoff': event.get('date'),  # ISO 8601 UTC timestamp
         }
         results[match_num] = result
 

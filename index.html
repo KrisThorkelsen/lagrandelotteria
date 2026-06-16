@@ -293,6 +293,13 @@ function useTheme() {
   return { mode, setMode, isDark };
 }
 
+function formatKickoff(iso) {
+  if (!iso) return '';
+  const d = new Date(iso);
+  if (isNaN(d.getTime())) return '';
+  return d.toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit' });
+}
+
 function useC() {
   const { isDark } = React.useContext(ThemeCtx);
   const w = a => isDark ? `rgba(255,255,255,${a})` : `rgba(0,0,0,${a})`;
@@ -535,7 +542,9 @@ function KamperView({ results }) {
           }}>
             {/* Top row: num + date + status */}
             <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:10}}>
-              <span style={{color:'#475569',fontSize:11,fontWeight:600}}>#{m.num} · {m.date}</span>
+              <span style={{color:'#475569',fontSize:11,fontWeight:600}}>
+                #{m.num} · {m.date}{res?.kickoff ? ` · ${formatKickoff(res.kickoff)}` : ''}
+              </span>
               {isLive ? (
                 <span style={{
                   display:'inline-flex',alignItems:'center',gap:4,
