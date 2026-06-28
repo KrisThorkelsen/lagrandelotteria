@@ -647,6 +647,150 @@
       "away": "Usbekistan",
       "home_score": null,
       "away_score": null
+    },
+    {
+      "num": 73,
+      "day": "Lør",
+      "date": "Jul 4, 2026",
+      "home": "Sør-Afrika",
+      "away": "Canada",
+      "home_score": null,
+      "away_score": null
+    },
+    {
+      "num": 74,
+      "day": "Lør",
+      "date": "Jul 4, 2026",
+      "home": "Tyskland",
+      "away": "Paraguay",
+      "home_score": null,
+      "away_score": null
+    },
+    {
+      "num": 75,
+      "day": "Tors",
+      "date": "Jul 3, 2026",
+      "home": "Nederland",
+      "away": "Marokko",
+      "home_score": null,
+      "away_score": null
+    },
+    {
+      "num": 76,
+      "day": "Søn",
+      "date": "Jul 5, 2026",
+      "home": "Brasil",
+      "away": "Japan",
+      "home_score": null,
+      "away_score": null
+    },
+    {
+      "num": 77,
+      "day": "Ons",
+      "date": "Jul 2, 2026",
+      "home": "Frankrike",
+      "away": "Sverige",
+      "home_score": null,
+      "away_score": null
+    },
+    {
+      "num": 78,
+      "day": "Ons",
+      "date": "Jul 2, 2026",
+      "home": "Elfenbenskysten",
+      "away": "Norge",
+      "home_score": null,
+      "away_score": null
+    },
+    {
+      "num": 79,
+      "day": "Man",
+      "date": "Jul 6, 2026",
+      "home": "Mexico",
+      "away": "Ecuador",
+      "home_score": null,
+      "away_score": null
+    },
+    {
+      "num": 80,
+      "day": "Tirs",
+      "date": "Jul 1, 2026",
+      "home": "England",
+      "away": "DR Kongo",
+      "home_score": null,
+      "away_score": null
+    },
+    {
+      "num": 81,
+      "day": "Tirs",
+      "date": "Jul 7, 2026",
+      "home": "USA",
+      "away": "Bosnia-Hercegovina",
+      "home_score": null,
+      "away_score": null
+    },
+    {
+      "num": 82,
+      "day": "Tirs",
+      "date": "Jul 1, 2026",
+      "home": "Belgia",
+      "away": "Senegal",
+      "home_score": null,
+      "away_score": null
+    },
+    {
+      "num": 83,
+      "day": "Man",
+      "date": "Jul 6, 2026",
+      "home": "Portugal",
+      "away": "Kroatia",
+      "home_score": null,
+      "away_score": null
+    },
+    {
+      "num": 84,
+      "day": "Søn",
+      "date": "Jun 29, 2026",
+      "home": "Spania",
+      "away": "Østerrike",
+      "home_score": null,
+      "away_score": null
+    },
+    {
+      "num": 85,
+      "day": "Tirs",
+      "date": "Jul 7, 2026",
+      "home": "Sveits",
+      "away": "Algerie",
+      "home_score": null,
+      "away_score": null
+    },
+    {
+      "num": 86,
+      "day": "Tirs",
+      "date": "Jul 7, 2026",
+      "home": "Argentina",
+      "away": "Kapp Verde",
+      "home_score": null,
+      "away_score": null
+    },
+    {
+      "num": 87,
+      "day": "Søn",
+      "date": "Jul 5, 2026",
+      "home": "Colombia",
+      "away": "Ghana",
+      "home_score": null,
+      "away_score": null
+    },
+    {
+      "num": 88,
+      "day": "Søn",
+      "date": "Jun 29, 2026",
+      "home": "Australia",
+      "away": "Egypt",
+      "home_score": null,
+      "away_score": null
     }
   ],
   "predictions": {
@@ -938,6 +1082,70 @@
       "72": {
         "home": 0,
         "away": 0
+      },
+      "73": {
+        "home": 0,
+        "away": 1
+      },
+      "74": {
+        "home": 1,
+        "away": 0
+      },
+      "75": {
+        "home": 2,
+        "away": 2
+      },
+      "76": {
+        "home": 1,
+        "away": 1
+      },
+      "77": {
+        "home": 3,
+        "away": 0
+      },
+      "78": {
+        "home": 1,
+        "away": 3
+      },
+      "79": {
+        "home": 2,
+        "away": 0
+      },
+      "80": {
+        "home": 1,
+        "away": 1
+      },
+      "81": {
+        "home": 1,
+        "away": 1
+      },
+      "82": {
+        "home": 1,
+        "away": 2
+      },
+      "83": {
+        "home": 3,
+        "away": 1
+      },
+      "84": {
+        "home": 3,
+        "away": 0
+      },
+      "85": {
+        "home": 0,
+        "away": 0
+      },
+      "86": {
+        "home": 4,
+        "away": 0
+      },
+      "87": {
+        "home": 0,
+        "away": 1
+      },
+      "88": {
+        "home": 1,
+        "away": 0
       }
     },
     "Flo": {
@@ -1226,6 +1434,70 @@
         "away": 2
       },
       "72": {
+        "home": 1,
+        "away": 1
+      },
+      "73": {
+        "home": 1,
+        "away": 2
+      },
+      "74": {
+        "home": 2,
+        "away": 0
+      },
+      "75": {
+        "home": 1,
+        "away": 1
+      },
+      "76": {
+        "home": 2,
+        "away": 1
+      },
+      "77": {
+        "home": 3,
+        "away": 0
+      },
+      "78": {
+        "home": 2,
+        "away": 3
+      },
+      "79": {
+        "home": 2,
+        "away": 2
+      },
+      "80": {
+        "home": 2,
+        "away": 0
+      },
+      "81": {
+        "home": 2,
+        "away": 1
+      },
+      "82": {
+        "home": 2,
+        "away": 2
+      },
+      "83": {
+        "home": 2,
+        "away": 2
+      },
+      "84": {
+        "home": 2,
+        "away": 0
+      },
+      "85": {
+        "home": 1,
+        "away": 1
+      },
+      "86": {
+        "home": 2,
+        "away": 0
+      },
+      "87": {
+        "home": 2,
+        "away": 1
+      },
+      "88": {
         "home": 1,
         "away": 1
       }
@@ -1518,6 +1790,70 @@
       "72": {
         "home": 2,
         "away": 0
+      },
+      "73": {
+        "home": 0,
+        "away": 2
+      },
+      "74": {
+        "home": 1,
+        "away": 0
+      },
+      "75": {
+        "home": 1,
+        "away": 1
+      },
+      "76": {
+        "home": 2,
+        "away": 1
+      },
+      "77": {
+        "home": 4,
+        "away": 0
+      },
+      "78": {
+        "home": 0,
+        "away": 2
+      },
+      "79": {
+        "home": 1,
+        "away": 1
+      },
+      "80": {
+        "home": 1,
+        "away": 0
+      },
+      "81": {
+        "home": 2,
+        "away": 0
+      },
+      "82": {
+        "home": 1,
+        "away": 1
+      },
+      "83": {
+        "home": 2,
+        "away": 0
+      },
+      "84": {
+        "home": 2,
+        "away": 0
+      },
+      "85": {
+        "home": 2,
+        "away": 0
+      },
+      "86": {
+        "home": 3,
+        "away": 0
+      },
+      "87": {
+        "home": 0,
+        "away": 1
+      },
+      "88": {
+        "home": 1,
+        "away": 2
       }
     },
     "Kine": {
@@ -1808,6 +2144,70 @@
       "72": {
         "home": 1,
         "away": 1
+      },
+      "73": {
+        "home": 1,
+        "away": 2
+      },
+      "74": {
+        "home": 3,
+        "away": 1
+      },
+      "75": {
+        "home": 1,
+        "away": 1
+      },
+      "76": {
+        "home": 2,
+        "away": 1
+      },
+      "77": {
+        "home": 4,
+        "away": 0
+      },
+      "78": {
+        "home": 1,
+        "away": 3
+      },
+      "79": {
+        "home": 2,
+        "away": 0
+      },
+      "80": {
+        "home": 3,
+        "away": 0
+      },
+      "81": {
+        "home": 2,
+        "away": 1
+      },
+      "82": {
+        "home": 2,
+        "away": 2
+      },
+      "83": {
+        "home": 2,
+        "away": 2
+      },
+      "84": {
+        "home": 2,
+        "away": 1
+      },
+      "85": {
+        "home": 2,
+        "away": 1
+      },
+      "86": {
+        "home": 4,
+        "away": 0
+      },
+      "87": {
+        "home": 2,
+        "away": 1
+      },
+      "88": {
+        "home": 2,
+        "away": 2
       }
     },
     "Rebecka": {
@@ -2098,6 +2498,70 @@
       "72": {
         "home": 0,
         "away": 0
+      },
+      "73": {
+        "home": 1,
+        "away": 2
+      },
+      "74": {
+        "home": 3,
+        "away": 0
+      },
+      "75": {
+        "home": 1,
+        "away": 0
+      },
+      "76": {
+        "home": 3,
+        "away": 1
+      },
+      "77": {
+        "home": 5,
+        "away": 0
+      },
+      "78": {
+        "home": 1,
+        "away": 2
+      },
+      "79": {
+        "home": 1,
+        "away": 1
+      },
+      "80": {
+        "home": 3,
+        "away": 0
+      },
+      "81": {
+        "home": 2,
+        "away": 0
+      },
+      "82": {
+        "home": 2,
+        "away": 2
+      },
+      "83": {
+        "home": 3,
+        "away": 1
+      },
+      "84": {
+        "home": 2,
+        "away": 1
+      },
+      "85": {
+        "home": 1,
+        "away": 0
+      },
+      "86": {
+        "home": 3,
+        "away": 0
+      },
+      "87": {
+        "home": 2,
+        "away": 1
+      },
+      "88": {
+        "home": 1,
+        "away": 1
       }
     },
     "Sindre": {
@@ -2387,6 +2851,70 @@
       },
       "72": {
         "home": 0,
+        "away": 1
+      },
+      "73": {
+        "home": 1,
+        "away": 2
+      },
+      "74": {
+        "home": 3,
+        "away": 1
+      },
+      "75": {
+        "home": 1,
+        "away": 1
+      },
+      "76": {
+        "home": 2,
+        "away": 1
+      },
+      "77": {
+        "home": 4,
+        "away": 1
+      },
+      "78": {
+        "home": 1,
+        "away": 2
+      },
+      "79": {
+        "home": 1,
+        "away": 0
+      },
+      "80": {
+        "home": 2,
+        "away": 1
+      },
+      "81": {
+        "home": 3,
+        "away": 1
+      },
+      "82": {
+        "home": 2,
+        "away": 2
+      },
+      "83": {
+        "home": 2,
+        "away": 1
+      },
+      "84": {
+        "home": 3,
+        "away": 0
+      },
+      "85": {
+        "home": 2,
+        "away": 1
+      },
+      "86": {
+        "home": 4,
+        "away": 0
+      },
+      "87": {
+        "home": 2,
+        "away": 0
+      },
+      "88": {
+        "home": 1,
         "away": 1
       }
     },
@@ -2678,6 +3206,70 @@
       "72": {
         "home": 2,
         "away": 1
+      },
+      "73": {
+        "home": 1,
+        "away": 2
+      },
+      "74": {
+        "home": 3,
+        "away": 0
+      },
+      "75": {
+        "home": 2,
+        "away": 1
+      },
+      "76": {
+        "home": 2,
+        "away": 0
+      },
+      "77": {
+        "home": 2,
+        "away": 0
+      },
+      "78": {
+        "home": 1,
+        "away": 3
+      },
+      "79": {
+        "home": 2,
+        "away": 1
+      },
+      "80": {
+        "home": 3,
+        "away": 0
+      },
+      "81": {
+        "home": 2,
+        "away": 0
+      },
+      "82": {
+        "home": 2,
+        "away": 1
+      },
+      "83": {
+        "home": 1,
+        "away": 1
+      },
+      "84": {
+        "home": 2,
+        "away": 0
+      },
+      "85": {
+        "home": 1,
+        "away": 0
+      },
+      "86": {
+        "home": 3,
+        "away": 0
+      },
+      "87": {
+        "home": 2,
+        "away": 0
+      },
+      "88": {
+        "home": 1,
+        "away": 1
       }
     },
     "Kristoffer": {
@@ -2968,6 +3560,70 @@
       "72": {
         "home": 1,
         "away": 1
+      },
+      "73": {
+        "home": 1,
+        "away": 2
+      },
+      "74": {
+        "home": 3,
+        "away": 0
+      },
+      "75": {
+        "home": 2,
+        "away": 1
+      },
+      "76": {
+        "home": 2,
+        "away": 1
+      },
+      "77": {
+        "home": 3,
+        "away": 0
+      },
+      "78": {
+        "home": 1,
+        "away": 2
+      },
+      "79": {
+        "home": 2,
+        "away": 1
+      },
+      "80": {
+        "home": 3,
+        "away": 0
+      },
+      "81": {
+        "home": 2,
+        "away": 1
+      },
+      "82": {
+        "home": 1,
+        "away": 2
+      },
+      "83": {
+        "home": 1,
+        "away": 1
+      },
+      "84": {
+        "home": 2,
+        "away": 0
+      },
+      "85": {
+        "home": 1,
+        "away": 1
+      },
+      "86": {
+        "home": 4,
+        "away": 0
+      },
+      "87": {
+        "home": 2,
+        "away": 1
+      },
+      "88": {
+        "home": 1,
+        "away": 2
       }
     },
     "Cecilie": {
@@ -3258,6 +3914,70 @@
       "72": {
         "home": 2,
         "away": 1
+      },
+      "73": {
+        "home": 0,
+        "away": 1
+      },
+      "74": {
+        "home": 3,
+        "away": 0
+      },
+      "75": {
+        "home": 1,
+        "away": 2
+      },
+      "76": {
+        "home": 2,
+        "away": 1
+      },
+      "77": {
+        "home": 3,
+        "away": 1
+      },
+      "78": {
+        "home": 0,
+        "away": 2
+      },
+      "79": {
+        "home": 3,
+        "away": 1
+      },
+      "80": {
+        "home": 1,
+        "away": 0
+      },
+      "81": {
+        "home": 3,
+        "away": 0
+      },
+      "82": {
+        "home": 1,
+        "away": 1
+      },
+      "83": {
+        "home": 1,
+        "away": 0
+      },
+      "84": {
+        "home": 2,
+        "away": 0
+      },
+      "85": {
+        "home": 2,
+        "away": 1
+      },
+      "86": {
+        "home": 2,
+        "away": 0
+      },
+      "87": {
+        "home": 1,
+        "away": 0
+      },
+      "88": {
+        "home": 1,
+        "away": 0
       }
     },
     "Olav": {
@@ -3546,6 +4266,70 @@
         "away": 1
       },
       "72": {
+        "home": 0,
+        "away": 1
+      },
+      "73": {
+        "home": 1,
+        "away": 2
+      },
+      "74": {
+        "home": 3,
+        "away": 1
+      },
+      "75": {
+        "home": 2,
+        "away": 2
+      },
+      "76": {
+        "home": 1,
+        "away": 0
+      },
+      "77": {
+        "home": 4,
+        "away": 1
+      },
+      "78": {
+        "home": 1,
+        "away": 2
+      },
+      "79": {
+        "home": 1,
+        "away": 0
+      },
+      "80": {
+        "home": 1,
+        "away": 1
+      },
+      "81": {
+        "home": 3,
+        "away": 1
+      },
+      "82": {
+        "home": 2,
+        "away": 1
+      },
+      "83": {
+        "home": 2,
+        "away": 2
+      },
+      "84": {
+        "home": 2,
+        "away": 0
+      },
+      "85": {
+        "home": 4,
+        "away": 1
+      },
+      "86": {
+        "home": 2,
+        "away": 0
+      },
+      "87": {
+        "home": 1,
+        "away": 0
+      },
+      "88": {
         "home": 0,
         "away": 1
       }
@@ -3838,6 +4622,70 @@
       "72": {
         "home": 1,
         "away": 1
+      },
+      "73": {
+        "home": 0,
+        "away": 3
+      },
+      "74": {
+        "home": 3,
+        "away": 0
+      },
+      "75": {
+        "home": 3,
+        "away": 1
+      },
+      "76": {
+        "home": 3,
+        "away": 2
+      },
+      "77": {
+        "home": 2,
+        "away": 2
+      },
+      "78": {
+        "home": 2,
+        "away": 3
+      },
+      "79": {
+        "home": 2,
+        "away": 0
+      },
+      "80": {
+        "home": 4,
+        "away": 0
+      },
+      "81": {
+        "home": 2,
+        "away": 2
+      },
+      "82": {
+        "home": 3,
+        "away": 1
+      },
+      "83": {
+        "home": 1,
+        "away": 1
+      },
+      "84": {
+        "home": 3,
+        "away": 1
+      },
+      "85": {
+        "home": 2,
+        "away": 0
+      },
+      "86": {
+        "home": 4,
+        "away": 0
+      },
+      "87": {
+        "home": 2,
+        "away": 2
+      },
+      "88": {
+        "home": 1,
+        "away": 2
       }
     },
     "Markus": {
@@ -4128,6 +4976,70 @@
       "72": {
         "home": 0,
         "away": 1
+      },
+      "73": {
+        "home": 1,
+        "away": 1
+      },
+      "74": {
+        "home": 1,
+        "away": 1
+      },
+      "75": {
+        "home": 1,
+        "away": 1
+      },
+      "76": {
+        "home": 1,
+        "away": 1
+      },
+      "77": {
+        "home": 3,
+        "away": 1
+      },
+      "78": {
+        "home": 2,
+        "away": 1
+      },
+      "79": {
+        "home": 1,
+        "away": 1
+      },
+      "80": {
+        "home": 2,
+        "away": 1
+      },
+      "81": {
+        "home": 1,
+        "away": 1
+      },
+      "82": {
+        "home": 1,
+        "away": 1
+      },
+      "83": {
+        "home": 1,
+        "away": 1
+      },
+      "84": {
+        "home": 2,
+        "away": 1
+      },
+      "85": {
+        "home": 1,
+        "away": 1
+      },
+      "86": {
+        "home": 1,
+        "away": 1
+      },
+      "87": {
+        "home": 1,
+        "away": 1
+      },
+      "88": {
+        "home": 1,
+        "away": 1
       }
     },
     "Geir": {
@@ -4416,6 +5328,70 @@
         "away": 2
       },
       "72": {
+        "home": 1,
+        "away": 1
+      },
+      "73": {
+        "home": 1,
+        "away": 2
+      },
+      "74": {
+        "home": 2,
+        "away": 0
+      },
+      "75": {
+        "home": 1,
+        "away": 1
+      },
+      "76": {
+        "home": 2,
+        "away": 0
+      },
+      "77": {
+        "home": 3,
+        "away": 1
+      },
+      "78": {
+        "home": 1,
+        "away": 2
+      },
+      "79": {
+        "home": 2,
+        "away": 1
+      },
+      "80": {
+        "home": 3,
+        "away": 0
+      },
+      "81": {
+        "home": 2,
+        "away": 1
+      },
+      "82": {
+        "home": 2,
+        "away": 1
+      },
+      "83": {
+        "home": 1,
+        "away": 1
+      },
+      "84": {
+        "home": 3,
+        "away": 0
+      },
+      "85": {
+        "home": 1,
+        "away": 0
+      },
+      "86": {
+        "home": 3,
+        "away": 0
+      },
+      "87": {
+        "home": 2,
+        "away": 1
+      },
+      "88": {
         "home": 1,
         "away": 1
       }
@@ -4708,6 +5684,70 @@
       "72": {
         "home": 2,
         "away": 0
+      },
+      "73": {
+        "home": 1,
+        "away": 1
+      },
+      "74": {
+        "home": 2,
+        "away": 0
+      },
+      "75": {
+        "home": 2,
+        "away": 2
+      },
+      "76": {
+        "home": 3,
+        "away": 1
+      },
+      "77": {
+        "home": 3,
+        "away": 0
+      },
+      "78": {
+        "home": 2,
+        "away": 2
+      },
+      "79": {
+        "home": 0,
+        "away": 0
+      },
+      "80": {
+        "home": 2,
+        "away": 1
+      },
+      "81": {
+        "home": 2,
+        "away": 1
+      },
+      "82": {
+        "home": 2,
+        "away": 2
+      },
+      "83": {
+        "home": 2,
+        "away": 1
+      },
+      "84": {
+        "home": 2,
+        "away": 0
+      },
+      "85": {
+        "home": 1,
+        "away": 0
+      },
+      "86": {
+        "home": 3,
+        "away": 1
+      },
+      "87": {
+        "home": 2,
+        "away": 1
+      },
+      "88": {
+        "home": 0,
+        "away": 0
       }
     },
     "Andreas": {
@@ -4998,6 +6038,70 @@
       "72": {
         "home": 1,
         "away": 1
+      },
+      "73": {
+        "home": 1,
+        "away": 2
+      },
+      "74": {
+        "home": 2,
+        "away": 1
+      },
+      "75": {
+        "home": 1,
+        "away": 2
+      },
+      "76": {
+        "home": 2,
+        "away": 1
+      },
+      "77": {
+        "home": 3,
+        "away": 1
+      },
+      "78": {
+        "home": 1,
+        "away": 2
+      },
+      "79": {
+        "home": 2,
+        "away": 1
+      },
+      "80": {
+        "home": 2,
+        "away": 0
+      },
+      "81": {
+        "home": 2,
+        "away": 1
+      },
+      "82": {
+        "home": 1,
+        "away": 2
+      },
+      "83": {
+        "home": 2,
+        "away": 1
+      },
+      "84": {
+        "home": 2,
+        "away": 0
+      },
+      "85": {
+        "home": 2,
+        "away": 1
+      },
+      "86": {
+        "home": 3,
+        "away": 0
+      },
+      "87": {
+        "home": 2,
+        "away": 0
+      },
+      "88": {
+        "home": 1,
+        "away": 2
       }
     },
     "Stian": {
@@ -5287,6 +6391,70 @@
       },
       "72": {
         "home": 2,
+        "away": 1
+      },
+      "73": {
+        "home": 1,
+        "away": 2
+      },
+      "74": {
+        "home": 3,
+        "away": 1
+      },
+      "75": {
+        "home": 2,
+        "away": 1
+      },
+      "76": {
+        "home": 2,
+        "away": 1
+      },
+      "77": {
+        "home": 4,
+        "away": 1
+      },
+      "78": {
+        "home": 1,
+        "away": 2
+      },
+      "79": {
+        "home": 2,
+        "away": 1
+      },
+      "80": {
+        "home": 2,
+        "away": 1
+      },
+      "81": {
+        "home": 2,
+        "away": 1
+      },
+      "82": {
+        "home": 1,
+        "away": 0
+      },
+      "83": {
+        "home": 2,
+        "away": 1
+      },
+      "84": {
+        "home": 2,
+        "away": 0
+      },
+      "85": {
+        "home": 1,
+        "away": 0
+      },
+      "86": {
+        "home": 3,
+        "away": 0
+      },
+      "87": {
+        "home": 1,
+        "away": 0
+      },
+      "88": {
+        "home": 1,
         "away": 1
       }
     },
@@ -5578,6 +6746,70 @@
       "72": {
         "home": 2,
         "away": 1
+      },
+      "73": {
+        "home": 1,
+        "away": 2
+      },
+      "74": {
+        "home": 2,
+        "away": 0
+      },
+      "75": {
+        "home": 1,
+        "away": 1
+      },
+      "76": {
+        "home": 3,
+        "away": 1
+      },
+      "77": {
+        "home": 2,
+        "away": 0
+      },
+      "78": {
+        "home": 1,
+        "away": 2
+      },
+      "79": {
+        "home": 2,
+        "away": 1
+      },
+      "80": {
+        "home": 3,
+        "away": 0
+      },
+      "81": {
+        "home": 2,
+        "away": 1
+      },
+      "82": {
+        "home": 1,
+        "away": 0
+      },
+      "83": {
+        "home": 2,
+        "away": 1
+      },
+      "84": {
+        "home": 3,
+        "away": 0
+      },
+      "85": {
+        "home": 2,
+        "away": 0
+      },
+      "86": {
+        "home": 3,
+        "away": 0
+      },
+      "87": {
+        "home": 2,
+        "away": 1
+      },
+      "88": {
+        "home": 0,
+        "away": 1
       }
     },
     "Ivar": {
@@ -5868,6 +7100,70 @@
       "72": {
         "home": 2,
         "away": 0
+      },
+      "73": {
+        "home": 0,
+        "away": 2
+      },
+      "74": {
+        "home": 3,
+        "away": 0
+      },
+      "75": {
+        "home": 2,
+        "away": 1
+      },
+      "76": {
+        "home": 2,
+        "away": 0
+      },
+      "77": {
+        "home": 3,
+        "away": 1
+      },
+      "78": {
+        "home": 1,
+        "away": 2
+      },
+      "79": {
+        "home": 2,
+        "away": 1
+      },
+      "80": {
+        "home": 3,
+        "away": 0
+      },
+      "81": {
+        "home": 2,
+        "away": 0
+      },
+      "82": {
+        "home": 2,
+        "away": 1
+      },
+      "83": {
+        "home": 2,
+        "away": 1
+      },
+      "84": {
+        "home": 2,
+        "away": 0
+      },
+      "85": {
+        "home": 1,
+        "away": 1
+      },
+      "86": {
+        "home": 4,
+        "away": 0
+      },
+      "87": {
+        "home": 2,
+        "away": 1
+      },
+      "88": {
+        "home": 1,
+        "away": 2
       }
     },
     "Tommy": {
@@ -6158,6 +7454,70 @@
       "72": {
         "home": 2,
         "away": 0
+      },
+      "73": {
+        "home": 1,
+        "away": 2
+      },
+      "74": {
+        "home": 3,
+        "away": 0
+      },
+      "75": {
+        "home": 2,
+        "away": 1
+      },
+      "76": {
+        "home": 2,
+        "away": 1
+      },
+      "77": {
+        "home": 2,
+        "away": 0
+      },
+      "78": {
+        "home": 1,
+        "away": 2
+      },
+      "79": {
+        "home": 1,
+        "away": 1
+      },
+      "80": {
+        "home": 2,
+        "away": 0
+      },
+      "81": {
+        "home": 2,
+        "away": 1
+      },
+      "82": {
+        "home": 1,
+        "away": 1
+      },
+      "83": {
+        "home": 2,
+        "away": 1
+      },
+      "84": {
+        "home": 3,
+        "away": 0
+      },
+      "85": {
+        "home": 1,
+        "away": 1
+      },
+      "86": {
+        "home": 3,
+        "away": 0
+      },
+      "87": {
+        "home": 2,
+        "away": 0
+      },
+      "88": {
+        "home": 1,
+        "away": 1
       }
     },
     "Engen": {
@@ -6448,6 +7808,70 @@
       "72": {
         "home": 1,
         "away": 0
+      },
+      "73": {
+        "home": 1,
+        "away": 1
+      },
+      "74": {
+        "home": 3,
+        "away": 1
+      },
+      "75": {
+        "home": 2,
+        "away": 1
+      },
+      "76": {
+        "home": 2,
+        "away": 1
+      },
+      "77": {
+        "home": 3,
+        "away": 1
+      },
+      "78": {
+        "home": 1,
+        "away": 1
+      },
+      "79": {
+        "home": 1,
+        "away": 1
+      },
+      "80": {
+        "home": 3,
+        "away": 0
+      },
+      "81": {
+        "home": 2,
+        "away": 0
+      },
+      "82": {
+        "home": 1,
+        "away": 2
+      },
+      "83": {
+        "home": 2,
+        "away": 1
+      },
+      "84": {
+        "home": 2,
+        "away": 0
+      },
+      "85": {
+        "home": 1,
+        "away": 1
+      },
+      "86": {
+        "home": 3,
+        "away": 0
+      },
+      "87": {
+        "home": 2,
+        "away": 1
+      },
+      "88": {
+        "home": 0,
+        "away": 1
       }
     }
   },

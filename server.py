@@ -83,10 +83,10 @@ _cache_lock = threading.Lock()
 
 ESPN_BASE = 'https://site.api.espn.com/apis/site/v2/sports/soccer/FIFA.WORLD/scoreboard'
 
-# Group stage dates: June 11–28, 2026
+# Group stage (Jun 11–28) + R16 (Jun 29–Jul 8), 2026
 TOURNAMENT_DATES = [
     (date(2026, 6, 11) + timedelta(days=i)).strftime('%Y%m%d')
-    for i in range(18)
+    for i in range(28)
 ]
 
 
