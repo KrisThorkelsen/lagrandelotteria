@@ -82,12 +82,31 @@ _cache = {'results': {}, 'live': [], 'updated': 0}
 _cache_lock = threading.Lock()
 
 ESPN_BASE = 'https://site.api.espn.com/apis/site/v2/sports/soccer/FIFA.WORLD/scoreboard'
+ESPN_SUMMARY = 'https://site.api.espn.com/apis/site/v2/sports/soccer/FIFA.WORLD/summary'
 
 # Group stage (Jun 11–28) + R16 (Jun 29–Jul 8), 2026
 TOURNAMENT_DATES = [
     (date(2026, 6, 11) + timedelta(days=i)).strftime('%Y%m%d')
     for i in range(28)
 ]
+
+
+def fetch_scores_90(event_id):
+    """Fetch 90-min scores via event summary linescores (for AET/pen matches)."""
+    try:
+        r = requests.get(ESPN_SUMMARY, params={'event': event_id}, timeout=8)
+        r.raise_for_status()
+        comp = r.json().get('header', {}).get('competitions', [{}])[0]
+        scores = {}
+        for team in comp.get('competitors', []):
+            ls = team.get('linescores', [])
+            if len(ls) >= 2:
+                score_90 = sum(int(p.get('displayValue', p.get('value', 0))) for p in ls[:2])
+                scores[team.get('homeAway')] = score_90
+        return scores  # {'home': N, 'away': N} or {}
+    except Exception as e:
+        print(f'Summary fetch error for {event_id}: {e}')
+        return {}
 
 
 def fetch_day(date_str):
@@ -137,13 +156,27 @@ def parse_events(events):
         home_score = int(home_comp.get('score', 0)) if state in ('in', 'post') else None
         away_score = int(away_comp.get('score', 0)) if state in ('in', 'post') else None
 
+        status_detail = status.get('shortDetail', status.get('name', ''))
+        is_et = completed and any(
+            kw in status_detail.upper() for kw in ('AET', 'PEN', 'OT', 'EXTRA', 'PKS')
+        )
+
+        home_score_90 = None
+        away_score_90 = None
+        if is_et:
+            s90 = fetch_scores_90(event['id'])
+            home_score_90 = s90.get('home')
+            away_score_90 = s90.get('away')
+
         result = {
             'home_score': home_score,
             'away_score': away_score,
+            'home_score_90': home_score_90,  # 90-min score (set only for AET/pen matches)
+            'away_score_90': away_score_90,
             'state': state,          # pre / in / post
             'completed': completed,
             'clock': comp['status'].get('displayClock', ''),
-            'status_name': status.get('shortDetail', status.get('name', '')),
+            'status_name': status_detail,
             'kickoff': event.get('date'),  # ISO 8601 UTC timestamp
         }
         results[match_num] = result

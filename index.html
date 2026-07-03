@@ -331,6 +331,14 @@ function calcPoints(tipHome, tipAway, actHome, actAway) {
   return 0;
 }
 
+// For AET/pen matches use 90-min score; otherwise use final score
+function evalScore(res) {
+  return {
+    h: res.home_score_90 ?? res.home_score,
+    a: res.away_score_90 ?? res.away_score,
+  };
+}
+
 function getStandings(results, meta) {
   return PARTICIPANTS.map(name => {
     const tips = PREDICTIONS[name] || {};
@@ -344,7 +352,8 @@ function getStandings(results, meta) {
       const num = parseInt(numStr);
       const tip = tips[numStr] || tips[num];
       if (!tip || res.home_score === null || res.home_score === undefined) return;
-      const pts = calcPoints(tip.home, tip.away, res.home_score, res.away_score);
+      const { h: sh, a: sa } = evalScore(res);
+      const pts = calcPoints(tip.home, tip.away, sh, sa);
       matchPoints += pts;
       if (pts === 3) exact++;
       if (pts === 1) direction++;
@@ -572,7 +581,16 @@ function KamperView({ results }) {
                   {res.clock || 'LIVE'}
                 </span>
               ) : played ? (
-                <span style={{fontSize:11,color:'#22c55e'}}>✓ Ferdig</span>
+                <span style={{display:'inline-flex',alignItems:'center',gap:6}}>
+                  {res?.home_score_90 != null && (
+                    <span style={{fontSize:10,color:'#a78bfa',fontWeight:700,
+                      background:'rgba(167,139,250,0.12)',borderRadius:4,padding:'1px 5px',
+                      border:'1px solid rgba(167,139,250,0.25)'}}>
+                      {res.home_score}–{res.away_score} e.o.
+                    </span>
+                  )}
+                  <span style={{fontSize:11,color:'#22c55e'}}>✓ Ferdig</span>
+                </span>
               ) : (
                 <span style={{fontSize:11,color:'#475569'}}>Kommende</span>
               )}
@@ -589,9 +607,9 @@ function KamperView({ results }) {
               }}>
                 {played ? (
                   <>
-                    <span style={{color:isLive?'#fca5a5':C.text}}>{res.home_score}</span>
+                    <span style={{color:isLive?'#fca5a5':C.text}}>{res.home_score_90 ?? res.home_score}</span>
                     <span style={{color:'#475569'}}>–</span>
-                    <span style={{color:isLive?'#fca5a5':C.text}}>{res.away_score}</span>
+                    <span style={{color:isLive?'#fca5a5':C.text}}>{res.away_score_90 ?? res.away_score}</span>
                   </>
                 ) : <span style={{color:'#475569',fontSize:13,fontWeight:600}}>vs</span>}
               </div>
@@ -625,7 +643,8 @@ function DeltakerView({ results, meta }) {
     const tip = tips[String(match.num)] || tips[match.num];
     const res = results[match.num];
     const played = res && res.home_score !== null && res.home_score !== undefined;
-    const pts = played && tip ? calcPoints(tip.home, tip.away, res.home_score, res.away_score) : null;
+    const { h: sh, a: sa } = res ? evalScore(res) : { h: null, a: null };
+    const pts = played && tip ? calcPoints(tip.home, tip.away, sh, sa) : null;
     return { ...match, tip, res, played, pts };
   });
 
@@ -746,7 +765,10 @@ function DeltakerView({ results, meta }) {
                 {!isMobile && <td style={{fontSize:13}}><Flag country={m.home}/> {m.home}</td>}
                 <td style={{textAlign:'center'}}>
                   {m.played ? (
-                    <span style={{fontWeight:800,fontSize:15}}>{m.res.home_score}–{m.res.away_score}</span>
+                    <span style={{fontWeight:800,fontSize:15}}>
+                      {m.res.home_score_90 ?? m.res.home_score}–{m.res.away_score_90 ?? m.res.away_score}
+                      {m.res.home_score_90 != null && <span style={{fontSize:9,color:'#a78bfa',marginLeft:3}}>e.o.</span>}
+                    </span>
                   ) : <span style={{color:'#475569'}}>–</span>}
                 </td>
                 <td style={{textAlign:'center'}}>
@@ -799,7 +821,8 @@ function StatistikkView({ results, meta }) {
     PARTICIPANTS.forEach(p => {
       const tip = PREDICTIONS[p]?.[String(m.num)] || PREDICTIONS[p]?.[m.num];
       if (!tip) return;
-      const pts = calcPoints(tip.home, tip.away, res.home_score, res.away_score);
+      const { h: sh, a: sa } = evalScore(res);
+      const pts = calcPoints(tip.home, tip.away, sh, sa);
       if (pts === 3) exact++;
       else if (pts === 1) dir++;
       else wrong++;
@@ -889,7 +912,10 @@ function StatistikkView({ results, meta }) {
                 <tr key={m.num}>
                   <td style={{color:'#475569'}}>{m.num}</td>
                   <td style={{fontSize:13}}><Flag country={m.home}/> {m.home} – {m.away} <Flag country={m.away}/></td>
-                  <td style={{textAlign:'center',fontWeight:700}}>{res.home_score}–{res.away_score}</td>
+                  <td style={{textAlign:'center',fontWeight:700}}>
+                    {res.home_score_90 ?? res.home_score}–{res.away_score_90 ?? res.away_score}
+                    {res.home_score_90 != null && <span style={{fontSize:9,color:'#a78bfa',marginLeft:3}}>e.o.</span>}
+                  </td>
                   <td style={{textAlign:'center'}}>
                     <span style={{color:'#4ade80',fontWeight:700}}>{m.exact}</span>
                     <span style={{color:'#475569',fontSize:11}}> /{m.total}</span>
