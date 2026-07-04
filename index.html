@@ -550,20 +550,16 @@ function KamperView({ results }) {
         return (
           <React.Fragment key={m.num}>
           {showR16Header && (
-            <div style={{
-              display:'flex',alignItems:'center',gap:12,margin:'16px 0 12px',
-            }}>
+            <div style={{display:'flex',alignItems:'center',gap:12,margin:'16px 0 12px'}}>
               <div style={{flex:1,height:1,background:'var(--border)'}}/>
-              <span style={{
-                fontSize:12,fontWeight:700,letterSpacing:1.5,textTransform:'uppercase',
-                color:'#a78bfa',padding:'4px 12px',
-                background:'rgba(167,139,250,0.1)',borderRadius:20,
-                border:'1px solid rgba(167,139,250,0.25)'
-              }}>⚽ 16-delsfinaler</span>
-            )}
-            {showQFHeader && (
-              <span style={{display:'block',textAlign:'center',padding:'8px 0 4px',color:'var(--c-accent)',fontWeight:700,fontSize:'0.95rem'
-            }}>⚽ 8-delsfinaler</span>
+              <span style={{fontSize:12,fontWeight:700,letterSpacing:1.5,textTransform:'uppercase',color:'#a78bfa',padding:'4px 12px',background:'rgba(167,139,250,0.1)',borderRadius:20,border:'1px solid rgba(167,139,250,0.25)'}}>⚽ 16-delsfinaler</span>
+              <div style={{flex:1,height:1,background:'var(--border)'}}/>
+            </div>
+          )}
+          {showQFHeader && (
+            <div style={{display:'flex',alignItems:'center',gap:12,margin:'16px 0 12px'}}>
+              <div style={{flex:1,height:1,background:'var(--border)'}}/>
+              <span style={{fontSize:12,fontWeight:700,letterSpacing:1.5,textTransform:'uppercase',color:'#a78bfa',padding:'4px 12px',background:'rgba(167,139,250,0.1)',borderRadius:20,border:'1px solid rgba(167,139,250,0.25)'}}>⚽ 8-delsfinaler</span>
               <div style={{flex:1,height:1,background:'var(--border)'}}/>
             </div>
           )}
@@ -757,9 +753,10 @@ function DeltakerView({ results, meta }) {
                     borderTop:'1px solid rgba(167,139,250,0.2)',
                     borderBottom:'1px solid rgba(167,139,250,0.2)'
                   }}>⚽ 16-delsfinaler</td>
-                  </tr>}}
-                  {showQF && <tr><td colSpan={6} style={{textAlign:'center',padding:'6px 0',color:'var(--c-accent)',fontWeight:700}}>⚽ 8-delsfinaler</td>
                 </tr>
+              )}
+              {showQF && (
+                <tr><td colSpan={6} style={{textAlign:'center',padding:'6px 0 4px',fontWeight:700,fontSize:12,letterSpacing:1.5,textTransform:'uppercase',color:'#a78bfa',background:'rgba(167,139,250,0.07)',borderTop:'1px solid rgba(167,139,250,0.2)',borderBottom:'1px solid rgba(167,139,250,0.2)'}}>⚽ 8-delsfinaler</td></tr>
               )}
               <tr>
                 <td style={{color:'#475569',fontWeight:600,fontSize:12}}>
